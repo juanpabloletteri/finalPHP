@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2017 a las 18:18:40
+-- Tiempo de generación: 30-06-2017 a las 20:25:46
 -- Versión del servidor: 10.1.24-MariaDB
 -- Versión de PHP: 7.1.6
 
@@ -32,7 +32,7 @@ CREATE TABLE `materiales` (
   `codigo` int(11) NOT NULL,
   `nombre` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `precio` float NOT NULL,
-  `tipo` tinyint(1) NOT NULL
+  `tipo` varchar(20) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -40,8 +40,19 @@ CREATE TABLE `materiales` (
 --
 
 INSERT INTO `materiales` (`codigo`, `nombre`, `precio`, `tipo`) VALUES
-(7, 'Producto0', 1, 1),
-(13, 'A', 1, 0);
+(19, 'qwe', 12, 'Solido'),
+(20, 'qwe33e', 1211, 'Liquido'),
+(21, 'qddqw', 1211, 'Liquido'),
+(25, 'cemento', 120.1, 'Solido'),
+(26, 'cal', 452.1, 'Solido'),
+(27, 'arena', 1234, 'Liquido'),
+(31, 'asdasd', 212, 'Solido'),
+(32, 'werwfwf', 1223, 'Solido'),
+(33, 'werwr', 234, 'Solido'),
+(34, '234', 23, 'Solido'),
+(35, '234234', 2323, 'Solido'),
+(36, 'ddrfr', 22323, 'Solido'),
+(37, 'f322f3', 2323, 'Solido');
 
 -- --------------------------------------------------------
 
@@ -55,6 +66,15 @@ CREATE TABLE `usuarios` (
   `email` varchar(50) NOT NULL,
   `categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `email`, `categoria`) VALUES
+(1, 'Juan', 'juan@gmail.com', 0),
+(2, 'Jose', 'jose@gmail.com', 1),
+(3, 'Maria', 'maria@gmail.com', 2);
 
 --
 -- Índices para tablas volcadas
@@ -80,12 +100,12 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `materiales`
 --
 ALTER TABLE `materiales`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

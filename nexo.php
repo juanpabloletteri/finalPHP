@@ -7,16 +7,20 @@ if(isset($_POST["accion"]))
     {
         include("botonesagregar.php");
     }
-    elseif($_POST["accion"]=="botonesmodifica")
+    else if($_POST["accion"]=="botonesmodifica")
     {
         include("botonesmodificar.php");
     }
-    elseif($_POST["accion"]=="TablaMateriales")
+    else if($_POST["accion"]=="TablaMateriales")
     {
         echo(Materiales::TablaMateriales());
     }
-    elseif($_POST["accion"]=="AgregarMaterial")
+    else if($_POST["accion"]=="AgregarMaterial")
     {
         Materiales::AgregarMaterial($_POST["nombre"], $_POST["precio"], $_POST["tipo"]);
+    }
+    else if($_POST["accion"]=="EliminarMaterial")
+    {
+        Materiales::EliminarMaterial($_POST["id"]);
     }
 }

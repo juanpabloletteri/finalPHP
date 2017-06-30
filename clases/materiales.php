@@ -75,4 +75,15 @@ class Materiales
         //$consulta->bindValue(':operador',$_SESSION['usuario'], PDO::PARAM_STR);
         $consulta->execute();
     }
+
+    public static function EliminarMaterial($id)
+    {
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+        $consulta =$objetoAccesoDato->RetornarConsulta(
+            "DELETE from materiales
+            WHERE codigo=:id"
+            );
+        $consulta->bindValue(':id',$id, PDO::PARAM_STR);
+        $consulta->execute();
+    }
 }

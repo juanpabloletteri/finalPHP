@@ -48,6 +48,18 @@ function limpiar(){
 
 function AgregarMaterial()
 {
+    if($("#nombre").val()=="")
+    {
+        $("#error").html("<div class='alert alert-danger'><strong>Agregar Material</strong></div>")
+        alert("agregar material");
+        return "error";
+    }
+    else if($("#precio").val()=="")
+    {
+        $("#error").html("<div class='alert alert-danger'><strong>Agregar Precio</strong></div>")
+        alert("agregar precio");
+        return "error";
+    }
     $.ajax({
         url:"nexo.php",
         type:"post",
@@ -56,6 +68,22 @@ function AgregarMaterial()
             nombre: $("#nombre").val(),
             precio: $("#precio").val(),
             tipo: $("#tipo").val()
+        },
+        success: function(data){
+            botonesagrega();
+            tabla();
+        }
+    })
+}
+
+function EliminarMaterial(id)
+{
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"EliminarMaterial",
+            id:id
         },
         success: function(data){
             tabla();

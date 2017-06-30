@@ -19,7 +19,10 @@
 				<option value="Liquido">Líquido</option>
 			</select>
 		</div>
-		<input type='button' class='btn btn-success' value='Agregar' onclick='AgregarMaterial()'>
+			<input type='button' class='btn btn-success' value='Agregar' onclick='AgregarMaterial()'>
+			<div class="form-group" id="error">
+			</div>
 		</div>
+
     </div>
 	</form>
