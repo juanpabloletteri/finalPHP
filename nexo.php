@@ -23,4 +23,8 @@ if(isset($_POST["accion"]))
     {
         Materiales::EliminarMaterial($_POST["id"]);
     }
+    else if($_POST["accion"]=="ModificarMaterial")
+    {
+        Materiales::TraerUnMaterial($_POST["id"]);
+    }
 }

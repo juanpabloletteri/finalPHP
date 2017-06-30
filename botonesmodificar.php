@@ -19,7 +19,7 @@
 				<option value="Liquido">Líquido</option>
 			</select>
 		</div>
-		<input type='button' class='btn btn-success' value='Aceptar' onclick='ModificarMaterial()'>
+		<input type='button' class='btn btn-success' value='Aceptar' onclick='AceptarModificacion()'>
 		<input type='button' class='btn btn-danger' value='Cancelar' onclick='botonesagrega()'>
 		</div>
     </div>

@@ -90,3 +90,28 @@ function EliminarMaterial(id)
         }
     })
 }
+
+function ModificarMaterial(id)
+{
+    botonesmodifica();
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        //dataType:"JSON",
+        data:{
+            accion:"ModificarMaterial",
+            id:id
+        },
+        success: function(data){
+            alert(data);
+            $("#nombre").val(data[0].nombre);
+            $("#precio").val("SIP");
+            $("#tipo").val()
+        }
+    })
+}
+
+function AceptarModificacion()
+{
+
+}
