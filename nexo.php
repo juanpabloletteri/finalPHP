@@ -1,5 +1,5 @@
 <?php
-require("tabla.php");
+//require("tabla.php");
 
 if(isset($_POST["accion"]))
 {
