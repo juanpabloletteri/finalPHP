@@ -41,7 +41,9 @@
 </nav>
 
 <div id="botones" class="container">botones</div>
-<div id="tabla" class="container">tabla</div>
+<div id="tabla" class="container">tabla
+<img class="img-responsive" src="dist/corralon.jpg" alt="Chania">
+</div>
 
 </body>
 </html>
