@@ -39,8 +39,8 @@
   </div>
 </nav>
 
-<div id="botones">botones</div>
-<div id="tabla">tabla</div>
+<div id="botones" class="container">botones</div>
+<div id="tabla" class="container">tabla</div>
 
 </body>
 </html>

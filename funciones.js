@@ -1,5 +1,5 @@
 function botones(){
-    alert("botones");
+    //alert("botones");
     $.ajax({
         url:"nexo.php",
         type:"post",
@@ -13,11 +13,21 @@ function botones(){
 }
 
 function tabla(){
-    alert("tabla");
+    //alert("tabla");
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"TablaMateriales"
+        },
+        success: function(data){
+            $("#tabla").html(data)
+        }
+    })
 }
 
 function limpiar(){
-    alert("limpiar");
+    //alert("limpiar");
     $("#botones").html("BOTONES LIM");
     $("#tabla").html("TABLA LIMP");
 }
