@@ -10,13 +10,13 @@
 		</div>
 		<div class="form-group">
 			<label for="precio">Precio: </label>
-			<input type="text" id="precio" placeholder="Precio" class="form-control" >
+			<input type="number" id="precio" placeholder="Precio" class="form-control" >
 		</div>
 		<div class="form-group">
 			<label for="tipo">Tipo: </label>
 			<select id="tipo" class="form-control" >
-				<option value="0">Sólido</option>
-				<option value="1">Líquido</option>
+				<option value="Solido">Sólido</option>
+				<option value="Liquido">Líquido</option>
 			</select>
 		</div>
 		<input type='button' class='btn btn-success' value='Agregar' onclick='AgregarMaterial()'>

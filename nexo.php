@@ -15,4 +15,8 @@ if(isset($_POST["accion"]))
     {
         echo(Materiales::TablaMateriales());
     }
+    elseif($_POST["accion"]=="AgregarMaterial")
+    {
+        Materiales::AgregarMaterial($_POST["nombre"], $_POST["precio"], $_POST["tipo"]);
+    }
 }

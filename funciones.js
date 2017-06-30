@@ -45,3 +45,20 @@ function limpiar(){
     $("#botones").html("BOTONES LIM");
     $("#tabla").html("TABLA LIMP");
 }
+
+function AgregarMaterial()
+{
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"AgregarMaterial",
+            nombre: $("#nombre").val(),
+            precio: $("#precio").val(),
+            tipo: $("#tipo").val()
+        },
+        success: function(data){
+            tabla();
+        }
+    })
+}
