@@ -26,9 +26,10 @@
       <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="">Home</a></li>
       <li><a onclick="botones()" href="#">BOTONES</a></li>
       <li><a onclick="tabla()" href="#">TABLA</a></li>
+      <li><a onclick="limpiar()" href="#">LIMPIAR</a></li>
     </ul>
       
     <ul class="nav navbar-nav navbar-right">
@@ -38,7 +39,7 @@
   </div>
 </nav>
 
-<div id="botnes">botones</div>
+<div id="botones">botones</div>
 <div id="tabla">tabla</div>
 
 </body>
