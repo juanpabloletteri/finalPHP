@@ -1,6 +1,6 @@
-<div id="form" class="container">
-	<div class="panel panel-info">
-      <div class="panel-heading">ACCIONES</div>
+
+	<div class="panel panel-warning">
+      <div class="panel-heading">MODIFICAR</div>
 		<div class="panel-body">
 
 	<form id="formabm" class="form-inline">
@@ -19,8 +19,8 @@
 				<option value="1">Líquido</option>
 			</select>
 		</div>
-		<input type='button' class='btn btn-success' value='Agregar' onclick='AgregarMaterial()'>
+		<input type='button' class='btn btn-success' value='Aceptar' onclick='ModificarMaterial()'>
+		<input type='button' class='btn btn-danger' value='Cancelar' onclick='botonesagrega()'>
 		</div>
     </div>
 	</form>
-</div>

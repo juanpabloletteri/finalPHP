@@ -27,7 +27,8 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="">Home</a></li>
-      <li><a onclick="botones()" href="#">BOTONES</a></li>
+      <li><a onclick="botonesagrega()" href="#">BOTONES AGREGAR</a></li>
+      <li><a onclick="botonesmodifica()" href="#">BOTONES MODIFICA</a></li>
       <li><a onclick="tabla()" href="#">TABLA</a></li>
       <li><a onclick="limpiar()" href="#">LIMPIAR</a></li>
     </ul>

@@ -1,10 +1,24 @@
-function botones(){
+function botonesagrega(){
     //alert("botones");
     $.ajax({
         url:"nexo.php",
         type:"post",
         data:{
-            accion:"dibujarbotones"
+            accion:"botonesagrega"
+        },
+        success: function(data){
+            $("#botones").html(data)
+        }
+    })
+}
+
+function botonesmodifica(){
+    //alert("botones");
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"botonesmodifica"
         },
         success: function(data){
             $("#botones").html(data)
