@@ -93,7 +93,9 @@ class Materiales
 		$consulta =$objetoAccesoDato->RetornarConsulta("SELECT * from materiales WHERE codigo=:id");
         $consulta->bindValue(':id',$id, PDO::PARAM_STR);
 		$consulta->execute();
-        $array= $consulta->fetchAll(PDO::FETCH_ASSOC);			
-		var_dump($array);
+        $unmaterial= $consulta->fetchAll(PDO::FETCH_ASSOC);
+        $unmaterial=json_encode($unmaterial);			
+		//var_dump($unmaterial);
+        return $unmaterial;
     }
 }

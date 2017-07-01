@@ -31,6 +31,7 @@
       <li><a onclick="botonesmodifica()" href="#">BOTONES MODIFICA</a></li>
       <li><a onclick="tabla()" href="#">TABLA</a></li>
       <li><a onclick="limpiar()" href="#">LIMPIAR</a></li>
+      <li><a onclick="login()" href="#">LOGIN</a></li>
     </ul>
       
     <ul class="nav navbar-nav navbar-right">

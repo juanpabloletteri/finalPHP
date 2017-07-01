@@ -15,6 +15,10 @@ if(isset($_POST["accion"]))
     {
         echo(Materiales::TablaMateriales());
     }
+    else if($_POST["accion"]=="login")
+    {
+        include("login.php");
+    } 
     else if($_POST["accion"]=="AgregarMaterial")
     {
         Materiales::AgregarMaterial($_POST["nombre"], $_POST["precio"], $_POST["tipo"]);
@@ -25,6 +29,6 @@ if(isset($_POST["accion"]))
     }
     else if($_POST["accion"]=="ModificarMaterial")
     {
-        Materiales::TraerUnMaterial($_POST["id"]);
+        echo(Materiales::TraerUnMaterial($_POST["id"]));
     }
 }

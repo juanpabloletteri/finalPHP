@@ -46,6 +46,20 @@ function limpiar(){
     $("#tabla").html("TABLA LIMP");
 }
 
+function login()
+{
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"login"
+        },
+        success: function(data){
+            $("#tabla").html(data)
+        }
+    })
+}
+
 function AgregarMaterial()
 {
     if($("#nombre").val()=="")
@@ -97,16 +111,16 @@ function ModificarMaterial(id)
     $.ajax({
         url:"nexo.php",
         type:"post",
-        //dataType:"JSON",
+        dataType:"JSON",
         data:{
             accion:"ModificarMaterial",
             id:id
         },
         success: function(data){
-            alert(data);
-            $("#nombre").val(data[0].nombre);
-            $("#precio").val("SIP");
-            $("#tipo").val()
+            //alert(data),
+            $("#nombre").val(data[0].nombre),
+            $("#precio").val(data[0].precio),
+            $("#tipo").val(data[0].tipo)
         }
     })
 }
