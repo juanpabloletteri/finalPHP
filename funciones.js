@@ -120,12 +120,28 @@ function ModificarMaterial(id)
             //alert(data),
             $("#nombre").val(data[0].nombre),
             $("#precio").val(data[0].precio),
-            $("#tipo").val(data[0].tipo)
+            $("#tipo").val(data[0].tipo),
+            $("#codigo").val(data[0].codigo)
         }
     })
 }
 
 function AceptarModificacion()
 {
-
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"AceptarModificacion",
+            nombre: $("#nombre").val(),
+            precio: $("#precio").val(),
+            tipo: $("#tipo").val(),
+            codigo: $("#codigo").val()
+        },
+        success: function(data){
+            alert(data),
+            tabla(),
+            botonesagrega()
+        }
+    })
 }

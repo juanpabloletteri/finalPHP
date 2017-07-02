@@ -98,4 +98,20 @@ class Materiales
 		//var_dump($unmaterial);
         return $unmaterial;
     }
+
+    public static function AceptarModificacion($nombre, $precio, $tipo, $codigo){
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+        $consulta =$objetoAccesoDato->RetornarConsulta(
+            "UPDATE materiales 
+            SET nombre=:nombre, precio=:precio, tipo=:tipo
+		    WHERE codigo=:codigo"
+            );
+        $consulta->bindValue(':nombre',$nombre, PDO::PARAM_STR);
+        $consulta->bindValue(':precio',$precio, PDO::PARAM_INT);
+        $consulta->bindValue(':tipo',$tipo, PDO::PARAM_STR);
+        $consulta->bindValue(':codigo',$codigo, PDO::PARAM_STR);
+        //$consulta->bindValue(':operador',$_SESSION['usuario'], PDO::PARAM_STR);
+        $consulta->execute();
+        return "actualizacion exitosa";
+    }
 }

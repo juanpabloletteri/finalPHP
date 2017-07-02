@@ -21,6 +21,7 @@
 		</div>
 		<input type='button' class='btn btn-success' value='Aceptar' onclick='AceptarModificacion()'>
 		<input type='button' class='btn btn-danger' value='Cancelar' onclick='botonesagrega()'>
+		<input type="hidden" id="codigo">
 		</div>
     </div>
 	</form>

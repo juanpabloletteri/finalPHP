@@ -31,4 +31,8 @@ if(isset($_POST["accion"]))
     {
         echo(Materiales::TraerUnMaterial($_POST["id"]));
     }
+    else if($_POST["accion"]=="AceptarModificacion")
+    {
+        echo(Materiales::AceptarModificacion($_POST["nombre"], $_POST["precio"], $_POST["tipo"], $_POST["codigo"]));
+    }
 }
