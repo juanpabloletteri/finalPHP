@@ -82,15 +82,17 @@ function AgregarMaterial()
         return "error";
     }
     $.ajax({
-        url:"nexo.php",
+        //url:"nexo.php",
+        url:"slim/app.php/agregarmaterial",
         type:"post",
         data:{
-            accion:"AgregarMaterial",
+            //accion:"AgregarMaterial",
             nombre: $("#nombre").val(),
             precio: $("#precio").val(),
             tipo: $("#tipo").val()
         },
         success: function(data){
+            alert(data);
             botonesagrega();
             tabla();
         }

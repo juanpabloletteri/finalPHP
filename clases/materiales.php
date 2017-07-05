@@ -74,6 +74,7 @@ class Materiales
         $consulta->bindValue(':tipo',$tipo, PDO::PARAM_STR);
         //$consulta->bindValue(':operador',$_SESSION['usuario'], PDO::PARAM_STR);
         $consulta->execute();
+        return "material agregado";
     }
 
     public static function EliminarMaterial($id)
