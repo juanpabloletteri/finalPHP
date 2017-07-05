@@ -28,13 +28,20 @@ function botonesmodifica(){
 
 function tabla(){
     //alert("tabla");
-    $.ajax({
+    /*$.ajax({
         url:"nexo.php",
         type:"post",
         data:{
             accion:"TablaMateriales"
         },
         success: function(data){
+            $("#tabla").html(data)
+        }
+    })*/
+    $.ajax({
+        url:"slim/app.php/tablamateriales",
+        type:"get",
+        success:function(data){
             $("#tabla").html(data)
         }
     })
