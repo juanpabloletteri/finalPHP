@@ -145,3 +145,18 @@ function AceptarModificacion()
         }
     })
 }
+
+function slim()
+{
+    $.ajax({
+        url:"slim/app.php/hello",
+        type:"get",
+        data:{
+            name:$("#nombre").val(),
+            price: $("#precio").val(),
+        },
+        success: function(data){
+            alert(data)
+        }
+    })
+}
