@@ -33,6 +33,7 @@
       <li><a onclick="limpiar()" href="#">LIMPIAR</a></li>
       <li><a onclick="login()" href="#">LOGIN</a></li>
       <li><a onclick="slim()" href="#">SLIM</a></li>
+      <li><a onclick="tablausuarios()" href="#">TABLA USUARIOS</a></li>
     </ul>
       
     <ul class="nav navbar-nav navbar-right">
@@ -46,6 +47,7 @@
 <div id="tabla" class="container">tabla
 <img class="img-responsive" src="dist/corralon.jpg" alt="Chania">
 </div>
+<div id="tablausuarios" class="container">usuarios</div>
 
 </body>
 </html>

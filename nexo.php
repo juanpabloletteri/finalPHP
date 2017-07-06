@@ -40,4 +40,8 @@ if(isset($_POST["accion"]))
     {
         echo(Usuario::BuscarUsuario($_POST['mail'], $_POST['password']));
     }
+    else if($_POST["accion"]=="tablausuarios")
+    {
+        echo(Usuario::TablaUsuarios());
+    }
 }

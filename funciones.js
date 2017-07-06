@@ -51,6 +51,7 @@ function limpiar(){
     //alert("limpiar");
     $("#botones").html("BOTONES LIM");
     $("#tabla").html("TABLA LIMP");
+    $("#tablausuarios").html("TABLAUSUARIOS LIMP");
 }
 
 function login()
@@ -194,6 +195,20 @@ function ingresarusuario()
             alert("Mail o password incorrecto");
             $("#mail").val("");
             $("#password").val("");
+        }
+    })
+}
+
+function tablausuarios()
+{
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"tablausuarios"
+        },
+        success:function(data){
+            $("#tablausuarios").html(data);
         }
     })
 }
