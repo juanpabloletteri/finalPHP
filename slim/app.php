@@ -25,4 +25,10 @@ $app->post('/agregarmaterial', function (Request $request, Response $response) {
     $response = Materiales::AgregarMaterial($nombre, $precio, $tipo);
     return $response;
 });
+
+$app->delete('/eliminarmaterial', function (Request $request, Response $response) {  
+    $id = $request->getParam("id");
+    $response = Materiales::EliminarMaterial($id);
+    return $response;
+});
 $app->run();

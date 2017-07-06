@@ -86,6 +86,7 @@ class Materiales
             );
         $consulta->bindValue(':id',$id, PDO::PARAM_STR);
         $consulta->execute();
+        return "material eliminado";
     }
 
     public static function TraerUnMaterial($id)

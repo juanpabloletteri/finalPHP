@@ -102,13 +102,15 @@ function AgregarMaterial()
 function EliminarMaterial(id)
 {
     $.ajax({
-        url:"nexo.php",
-        type:"post",
+        //url:"nexo.php",
+        url:"slim/app.php/eliminarmaterial",
+        type:"delete",
         data:{
-            accion:"EliminarMaterial",
+            //accion:"EliminarMaterial",
             id:id
         },
         success: function(data){
+            alert(data);
             tabla();
         }
     })
