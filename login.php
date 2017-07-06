@@ -7,13 +7,13 @@
 		<div class="form-group">
       <h1>INGRESO</h1>
       
-        <p><input type="text" name="usuario" placeholder="Usuario" class="form-control"></p>
-        <p><input type="password" name="pass" placeholder="Password" class="form-control"></p>
-        <p class="submit"><input type="submit" name="boton" value="Ingresar" class="btn btn-success"></p>
-        <p><input type="reset" name="Borrar" value="Borrar Datos" class="btn btn-danger"></p>
+        <input type="mail" id="mail" placeholder="Mail" class="form-control"> <br><br>
+        <input type="password" id="password" placeholder="Password" class="form-control"><br><br>
+        <input type="button" name="ingresar" value="Ingresar" onclick='ingresarusuario()' class='btn btn-success'>
+        <input type="reset" name="Borrar" value="Borrar Datos" class="btn btn-danger">
         <p class="remember_me">
 
-        </p>
+        
         
 
       </form>

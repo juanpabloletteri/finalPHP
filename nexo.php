@@ -1,5 +1,6 @@
 <?php
 require("clases/materiales.php");
+require("clases/usuarios.php");
 
 if(isset($_POST["accion"]))
 {
@@ -34,5 +35,9 @@ if(isset($_POST["accion"]))
     else if($_POST["accion"]=="AceptarModificacion")
     {
         echo(Materiales::AceptarModificacion($_POST["nombre"], $_POST["precio"], $_POST["tipo"], $_POST["codigo"]));
+    }
+    else if($_POST["accion"]=="ingresar")
+    {
+        echo(Usuario::BuscarUsuario($_POST['mail'], $_POST['password']));
     }
 }

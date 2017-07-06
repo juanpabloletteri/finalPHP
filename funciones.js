@@ -172,3 +172,27 @@ function slim()
         }
     })
 }
+
+function ingresarusuario()
+{
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"ingresar",
+            mail:$("#mail").val(),
+            password:$("#password").val()
+        },
+        success: function(data){
+            if(data==true)
+            {
+                botonesagrega();
+                tabla();
+            }
+            else
+            {
+                alert("nonononono");
+            }
+        }
+    })
+}
