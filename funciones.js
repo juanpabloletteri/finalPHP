@@ -140,10 +140,11 @@ function ModificarMaterial(id)
 function AceptarModificacion()
 {
     $.ajax({
-        url:"nexo.php",
-        type:"post",
+        //url:"nexo.php",
+        url:"slim/app.php/aceptarmodificacion",
+        type:"put",
         data:{
-            accion:"AceptarModificacion",
+            //accion:"AceptarModificacion",
             nombre: $("#nombre").val(),
             precio: $("#precio").val(),
             tipo: $("#tipo").val(),

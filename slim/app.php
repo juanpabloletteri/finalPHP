@@ -31,4 +31,14 @@ $app->delete('/eliminarmaterial', function (Request $request, Response $response
     $response = Materiales::EliminarMaterial($id);
     return $response;
 });
+
+$app->put('/aceptarmodificacion', function (Request $request, Response $response) {  
+    $nombre = $request->getParam("nombre");
+    $precio = $request->getParam("precio");
+    $tipo = $request->getParam("tipo");
+    $codigo = $request->getParam("codigo");
+    $response = Materiales::AceptarModificacion($nombre, $precio, $tipo, $codigo);
+    return $response;
+});
+
 $app->run();
