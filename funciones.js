@@ -62,7 +62,7 @@ function login()
             accion:"login"
         },
         success: function(data){
-            $("#tabla").html(data)
+            $("#botones").html(data)
         }
     })
 }
@@ -178,21 +178,22 @@ function ingresarusuario()
     $.ajax({
         url:"nexo.php",
         type:"post",
+        dataType:"JSON",
         data:{
             accion:"ingresar",
             mail:$("#mail").val(),
             password:$("#password").val()
         },
         success: function(data){
-            if(data==true)
+            if(data)
             {
                 botonesagrega();
                 tabla();
+                exit();
             }
-            else
-            {
-                alert("nonononono");
-            }
+            alert("Mail o password incorrecto");
+            $("#mail").val("");
+            $("#password").val("");
         }
     })
 }

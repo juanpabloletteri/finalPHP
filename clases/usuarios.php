@@ -6,30 +6,22 @@ class Usuario
     public $mail;
     public $password;
     
-    public static function BuscarUsuario($usuario, $pass)
+    public static function BuscarUsuario($mail, $pass)
     {
-        $todos = file("usuarios.txt", FILE_IGNORE_NEW_LINES + FILE_SKIP_EMPTY_LINES);
-        //var_dump($todos);
+        $archivo = fopen("usuarios.txt", "r", FILE_IGNORE_NEW_LINES + FILE_SKIP_EMPTY_LINES);
 
-        foreach ($todos as $uno)
-        {
-            if ($uno==($usuario.",".$pass))
+        while(!feof($archivo))
+		{
+			$renglon=fgets($archivo);
+			$persona=explode(",", $renglon);
+            if($persona[0]==$mail && $persona[1]==$pass)
             {
-                $fecha=date("Y-m-d H:i:s");
-                $file=fopen("log.txt","a");
-                fwrite($file,$usuario."   ".$fecha."\n");
-                fclose($file);
-                //return "MAIAMEEEE";
-                return true;
-            }
-        }
-            $fecha=date("Y-m-d H:i:s");
-            $file=fopen("logFail.txt","a");
-            fwrite($file,$usuario."   ".$pass."   ".$fecha."\n");
-            fclose($file);
-            return false;
-            //return "AWAINTAAAA";
-
+                $coincidencia=array("mail"=>$persona[0], "password"=>$persona[1], "tipo"=>$persona[2]);
+                $coincidencia=json_encode($coincidencia);
+                return $coincidencia;
+            }  
+		}
+        return "null";
     }
 }
 

@@ -5,7 +5,7 @@
 
 	<form id="formlogin" class="form-inline">
 		<div class="form-group">
-      <h1>INGRESO</h1>
+      <h3>INGRESO</h3>
       
         <input type="mail" id="mail" placeholder="Mail" class="form-control"> <br><br>
         <input type="password" id="password" placeholder="Password" class="form-control"><br><br>
