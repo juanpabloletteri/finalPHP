@@ -34,7 +34,7 @@
   </div>
 </nav>
 </div>
-<div id="usuario" class="container"></div>
+<div id="usuario" class="container"><h3><?php if(isset($_COOKIE['ultimo'])) echo("Ultimo visitante: ".$_COOKIE['ultimo']) ?></h3></div>
 <div id="botones" class="container"></div>
 <div id="tabla" class="container">
 <img class="img-responsive" src="dist/corralon.jpg" alt="Chania">
