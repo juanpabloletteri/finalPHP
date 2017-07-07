@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +43,7 @@
     </ul>
   </div>
 </nav>
-
+<div id="usuario" class="container"> usuario</div>
 <div id="botones" class="container">botones</div>
 <div id="tabla" class="container">tabla
 <img class="img-responsive" src="dist/corralon.jpg" alt="Chania">

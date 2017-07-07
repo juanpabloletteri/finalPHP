@@ -1,4 +1,5 @@
 <?php
+session_start();
 require("clases/materiales.php");
 require("clases/usuarios.php");
 
@@ -44,4 +45,21 @@ if(isset($_POST["accion"]))
     {
         echo(Usuario::TablaUsuarios());
     }
+    else if($_POST["accion"]=="asignarusuario")
+    {
+        $_SESSION['mail']=$_POST['mail'];
+        $_SESSION['password']=$_POST['password'];
+        $_SESSION['tipo']=$_POST['tipo'];
+        //var_dump($_SESSION);
+    }
+    else if($_POST["accion"]=="navbar")
+    {
+        include("navbar.php");
+    }
+    else if($_POST["accion"]=="cerrarsesion")
+    {
+        session_unset();
+		session_destroy();
+        header("Location: index.php");
+    } 
 }

@@ -61,6 +61,7 @@ function limpiar(){
     $("#botones").html("BOTONES LIM");
     $("#tabla").html("TABLA LIMP");
     $("#tablausuarios").html("TABLAUSUARIOS LIMP");
+    $("#usuario").html("navbar limpia");
 }
 
 function login()
@@ -195,8 +196,16 @@ function ingresarusuario()
             password:$("#password").val()
         },
         success: function(data){
-            if(data.tipo=="administrador")
+            if(data==null)
             {
+                alert("Mail o password incorrecto");
+                $("#mail").val("");
+                $("#password").val("");
+            }
+            else if(data.tipo=="administrador")
+            {
+                datosusuario(data.mail, data.password, data.tipo);
+                navbar();
                 botonesagrega();
                 tabla();
                 tablausuarios();
@@ -204,23 +213,37 @@ function ingresarusuario()
             }
             else if(data.tipo=="vendedor")
             {
+                datosusuario(data.mail, data.password, data.tipo);
+                navbar();
                 botonesagrega();
                 tabla();
                 exit();
             }
             else if(data.tipo=="comprador")
             {
+                datosusuario(data.mail, data.password, data.tipo);
+                navbar();
                 tablacomprador();
                 $("#botones").html("");
                 exit();
             }
-            alert("Mail o password incorrecto");
-            $("#mail").val("");
-            $("#password").val("");
+
         }
     })
 }
-
+function datosusuario(mail, password, tipo)
+{
+            $.ajax({
+                url:"nexo.php",
+                type:"post",
+                data:{
+                    accion:"asignarusuario",
+                    mail:mail,
+                    password:password, 
+                    tipo:tipo
+                }
+            })
+}
 function tablausuarios()
 {
     $.ajax({
@@ -231,6 +254,35 @@ function tablausuarios()
         },
         success:function(data){
             $("#tablausuarios").html(data);
+        }
+    })
+}
+
+function navbar()
+{
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"navbar"
+        },
+        success:function(data){
+            $("#usuario").html(data)
+        }
+    })
+}
+
+function cerrarsesion()
+{
+    limpiar();
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"cerrarsesion"
+        },
+        success:function(data){
+            alert("SALIENDO......");
         }
     })
 }
