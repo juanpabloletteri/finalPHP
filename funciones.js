@@ -276,7 +276,7 @@ function navbar()
 function cerrarsesion()
 {
     
-    $("#panel").html("<nav  class='navbar navbar-inverse'>  <div  class='container-fluid'>    <div class='navbar-header'>      <a class='navbar-brand' href='#'>CORRALON MANSILLA</a>    </div>          <ul class='nav navbar-nav navbar-right'>      <li><a onclick='login()' href='#'><span class='glyphicon glyphicon-user'></span> Loguearse</a></li>    </ul>  </div></nav>");
+    $("#panel").html("<nav  class='navbar navbar-inverse'>  <div  class='container-fluid'>    <div class='navbar-header'>      <a class='navbar-brand' href='#'>CORRALON MANSILLA</a>    </div>          <ul class='nav navbar-nav navbar-right'>  <li><a onclick='borrarcookie()' href='#'><span class='glyphicon glyphicon-log-in'></span> Borrar Cookies</a></li>    <li><a onclick='login()' href='#'><span class='glyphicon glyphicon-user'></span> Loguearse</a></li>    </ul>  </div></nav>");
     $("#botones").html("");
     $("#tabla").html("<img class='img-responsive' src='dist/corralon.jpg' alt='Chania'>");
     $("#tablausuarios").html("");
@@ -291,6 +291,20 @@ function cerrarsesion()
         success:function(data){
             swal("Gracias por su visita. Lo esperamos pronto...");
             $("#botones").html("<h3>Ultimo visitante".concat(data).concat("</h3>"));
+        }
+    })
+}
+
+function borrarcookie()
+{
+    $.ajax({
+        url:"nexo.php",
+        type:"post",
+        data:{
+            accion:"borrarcookie"
+        },
+        success:function(data){
+            swal(data);
         }
     })
 }

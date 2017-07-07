@@ -62,5 +62,10 @@ if(isset($_POST["accion"]))
         session_unset();
 		session_destroy();
         echo($_COOKIE['ultimo']);
+    }
+    else if($_POST["accion"]=="borrarcookie")
+    {
+        setcookie("ultimo", "", -1);
+    echo("Cookie eliminada exitosamente");
     } 
 }

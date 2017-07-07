@@ -28,6 +28,7 @@
     </div>
       
     <ul class="nav navbar-nav navbar-right">
+      <li><a onclick='borrarcookie()' href='#'><span class='glyphicon glyphicon-log-in'></span> Borrar Cookies</a></li>
       <li><a onclick="login()" href="#"><span class="glyphicon glyphicon-user"></span> Loguearse</a></li>
     </ul>
   </div>
