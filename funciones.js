@@ -210,7 +210,7 @@ function ingresarusuario()
                 botonesagrega();
                 tabla();
                 tablausuarios();
-                exit();
+                return;
             }
             else if(data.tipo=="vendedor")
             {
@@ -218,7 +218,7 @@ function ingresarusuario()
                 navbar();
                 botonesagrega();
                 tabla();
-                exit();
+                return;
             }
             else if(data.tipo=="comprador")
             {
@@ -226,7 +226,7 @@ function ingresarusuario()
                 navbar();
                 tablacomprador();
                 $("#botones").html("");
-                exit();
+                return;
             }
 
         }
