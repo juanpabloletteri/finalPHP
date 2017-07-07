@@ -20,35 +20,25 @@
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<div id="panel">
+<nav  class="navbar navbar-inverse">
+  <div  class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#">CORRALON MANSILLA</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="">Home</a></li>
-      <li><a onclick="botonesagrega()" href="#">BOTONES AGREGAR</a></li>
-      <li><a onclick="botonesmodifica()" href="#">BOTONES MODIFICA</a></li>
-      <li><a onclick="tabla()" href="#">TABLA</a></li>
-      <li><a onclick="limpiar()" href="#">LIMPIAR</a></li>
-      <li><a onclick="login()" href="#">LOGIN</a></li>
-      <li><a onclick="slim()" href="#">SLIM</a></li>
-      <li><a onclick="tablausuarios()" href="#">TABLA USUARIOS</a></li>
-    </ul>
       
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a onclick="login()" href="#"><span class="glyphicon glyphicon-user"></span> Loguearse</a></li>
     </ul>
   </div>
 </nav>
-<div id="usuario" class="container"> usuario</div>
-<div id="botones" class="container">botones</div>
-<div id="tabla" class="container">tabla
+</div>
+<div id="usuario" class="container"></div>
+<div id="botones" class="container"></div>
+<div id="tabla" class="container">
 <img class="img-responsive" src="dist/corralon.jpg" alt="Chania">
 </div>
-<div id="tablausuarios" class="container">usuarios</div>
+<div id="tablausuarios" class="container"></div>
 
 </body>
 </html>

@@ -267,14 +267,20 @@ function navbar()
             accion:"navbar"
         },
         success:function(data){
-            $("#usuario").html(data)
+            $("#panel").html(data)
         }
     })
 }
 
 function cerrarsesion()
 {
-    limpiar();
+    
+    $("#panel").html("<nav  class='navbar navbar-inverse'>  <div  class='container-fluid'>    <div class='navbar-header'>      <a class='navbar-brand' href='#'>CORRALON MANSILLA</a>    </div>          <ul class='nav navbar-nav navbar-right'>      <li><a onclick='login()' href='#'><span class='glyphicon glyphicon-user'></span> Loguearse</a></li>    </ul>  </div></nav>");
+    $("#botones").html("");
+    $("#tabla").html("<img class='img-responsive' src='dist/corralon.jpg' alt='Chania'>");
+    $("#tablausuarios").html("");
+    $("#usuario").html("");
+
     $.ajax({
         url:"nexo.php",
         type:"post",
@@ -282,7 +288,7 @@ function cerrarsesion()
             accion:"cerrarsesion"
         },
         success:function(data){
-            alert("SALIENDO......");
+            alert("GRACIAS POR SU VISITA, LO ESPERAMOS PRONTO......");
         }
     })
 }

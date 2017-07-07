@@ -60,6 +60,5 @@ if(isset($_POST["accion"]))
     {
         session_unset();
 		session_destroy();
-        header("Location: index.php");
     } 
 }
