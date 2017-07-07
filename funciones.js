@@ -1,5 +1,5 @@
 function botonesagrega(){
-    //alert("botones");
+    //swal("botones");
     $.ajax({
         url:"nexo.php",
         type:"post",
@@ -13,7 +13,7 @@ function botonesagrega(){
 }
 
 function botonesmodifica(){
-    //alert("botones");
+    //swal("botones");
     $.ajax({
         url:"nexo.php",
         type:"post",
@@ -27,7 +27,7 @@ function botonesmodifica(){
 }
 
 function tabla(){
-    //alert("tabla");
+    //swal("tabla");
     /*$.ajax({
         url:"nexo.php",
         type:"post",
@@ -57,7 +57,7 @@ function tablacomprador(){
 }
 
 function limpiar(){
-    //alert("limpiar");
+    //swal("limpiar");
     $("#botones").html("BOTONES LIM");
     $("#tabla").html("TABLA LIMP");
     $("#tablausuarios").html("TABLAUSUARIOS LIMP");
@@ -82,14 +82,14 @@ function AgregarMaterial()
 {
     if($("#nombre").val()=="")
     {
-        $("#error").html("<div class='alert alert-danger'><strong>Agregar Material</strong></div>")
-        alert("agregar material");
+        $("#error").html("<div class='swal swal-danger'><strong>Agregar Material</strong></div>")
+        swal("agregar material");
         return "error";
     }
     else if($("#precio").val()=="")
     {
-        $("#error").html("<div class='alert alert-danger'><strong>Agregar Precio</strong></div>")
-        alert("agregar precio");
+        $("#error").html("<div class='swal swal-danger'><strong>Agregar Precio</strong></div>")
+        swal("agregar precio");
         return "error";
     }
     $.ajax({
@@ -103,7 +103,7 @@ function AgregarMaterial()
             tipo: $("#tipo").val()
         },
         success: function(data){
-            alert(data);
+            swal(data);
             botonesagrega();
             tabla();
         }
@@ -121,7 +121,7 @@ function EliminarMaterial(id)
             id:id
         },
         success: function(data){
-            alert(data);
+            swal(data);
             tabla();
         }
     })
@@ -139,7 +139,7 @@ function ModificarMaterial(id)
             id:id
         },
         success: function(data){
-            //alert(data),
+            //swal(data),
             $("#nombre").val(data[0].nombre),
             $("#precio").val(data[0].precio),
             $("#tipo").val(data[0].tipo),
@@ -162,7 +162,7 @@ function AceptarModificacion()
             codigo: $("#codigo").val()
         },
         success: function(data){
-            alert(data),
+            swal(data),
             tabla(),
             botonesagrega()
         }
@@ -179,7 +179,7 @@ function slim()
             price: $("#precio").val(),
         },
         success: function(data){
-            alert(data)
+            swal(data)
         }
     })
 }
@@ -198,7 +198,7 @@ function ingresarusuario()
         success: function(data){
             if(data==null)
             {
-                alert("Mail o password incorrecto");
+                swal("Mail o password incorrecto");
                 $("#mail").val("");
                 $("#password").val("");
             }
@@ -288,7 +288,7 @@ function cerrarsesion()
             accion:"cerrarsesion"
         },
         success:function(data){
-            alert("GRACIAS POR SU VISITA, LO ESPERAMOS PRONTO......");
+            swal("GRACIAS POR SU VISITA, LO ESPERAMOS PRONTO......");
         }
     })
 }
