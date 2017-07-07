@@ -1,25 +1,24 @@
--- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2017 a las 20:25:46
--- Versión del servidor: 10.1.24-MariaDB
--- Versión de PHP: 7.1.6
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
+-- phpMyAdmin SQL Dump
+-- version 3.5.2.2
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 07-07-2017 a las 15:09:24
+-- Versión del servidor: 10.1.24-MariaDB
+-- Versión de PHP: 5.2.17
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `corralon`
+-- Base de datos: `u595030875_corra`
 --
 
 -- --------------------------------------------------------
@@ -28,31 +27,33 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `materiales`
 --
 
-CREATE TABLE `materiales` (
-  `codigo` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `materiales` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `precio` float NOT NULL,
-  `tipo` varchar(20) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `tipo` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=16 ;
 
 --
 -- Volcado de datos para la tabla `materiales`
 --
 
 INSERT INTO `materiales` (`codigo`, `nombre`, `precio`, `tipo`) VALUES
-(19, 'qwe', 12, 'Solido'),
-(20, 'qwe33e', 1211, 'Liquido'),
-(21, 'qddqw', 1211, 'Liquido'),
-(25, 'cemento', 120.1, 'Solido'),
-(26, 'cal', 452.1, 'Solido'),
-(27, 'arena', 1234, 'Liquido'),
-(31, 'asdasd', 212, 'Solido'),
-(32, 'werwfwf', 1223, 'Solido'),
-(33, 'werwr', 234, 'Solido'),
-(34, '234', 23, 'Solido'),
-(35, '234234', 2323, 'Solido'),
-(36, 'ddrfr', 22323, 'Solido'),
-(37, 'f322f3', 2323, 'Solido');
+(1, 'cemento', 120.1, 'Solido'),
+(2, 'cal', 80.5, 'Solido'),
+(3, 'arena fina', 12.2, 'Solido'),
+(4, 'arena mediana', 13.2, 'Solido'),
+(5, 'arena gruesa', 14.2, 'Solido'),
+(6, 'hidrofugo', 40.2, 'Liquido'),
+(8, 'aislante', 32, 'Liquido'),
+(9, 'ladrillo hueco', 11.55, 'Solido'),
+(10, 'ladrillo ceramico', 12.55, 'Solido'),
+(11, 'malla metalica', 52.85, 'Solido'),
+(12, 'pintura al latex', 257.5, 'Liquido'),
+(13, 'pintura al agua', 420.55, 'Liquido'),
+(7, 'pintura aislante', 358.5, 'Liquido'),
+(15, 'pintura', 320, 'Liquido');
 
 -- --------------------------------------------------------
 
@@ -60,12 +61,13 @@ INSERT INTO `materiales` (`codigo`, `nombre`, `precio`, `tipo`) VALUES
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `categoria` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `categoria` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -75,37 +77,6 @@ INSERT INTO `usuarios` (`id`, `nombre`, `email`, `categoria`) VALUES
 (1, 'Juan', 'juan@gmail.com', 0),
 (2, 'Jose', 'jose@gmail.com', 1),
 (3, 'Maria', 'maria@gmail.com', 2);
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `materiales`
---
-ALTER TABLE `materiales`
-  ADD PRIMARY KEY (`codigo`);
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `materiales`
---
-ALTER TABLE `materiales`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
