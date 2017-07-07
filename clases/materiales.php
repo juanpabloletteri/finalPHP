@@ -121,7 +121,7 @@ class Materiales
         $consulta->bindValue(':tipo',$tipo, PDO::PARAM_STR);
         //$consulta->bindValue(':operador',$_SESSION['usuario'], PDO::PARAM_STR);
         $consulta->execute();
-        return "material agregado";
+        return "Material Agregado";
     }
 
     public static function EliminarMaterial($id)
@@ -133,7 +133,7 @@ class Materiales
             );
         $consulta->bindValue(':id',$id, PDO::PARAM_STR);
         $consulta->execute();
-        return "material eliminado";
+        return "Material Eliminado";
     }
 
     public static function TraerUnMaterial($id)
@@ -161,6 +161,6 @@ class Materiales
         $consulta->bindValue(':codigo',$codigo, PDO::PARAM_STR);
         //$consulta->bindValue(':operador',$_SESSION['usuario'], PDO::PARAM_STR);
         $consulta->execute();
-        return "actualizacion exitosa";
+        return "Actualizacion Exitosa";
     }
 }

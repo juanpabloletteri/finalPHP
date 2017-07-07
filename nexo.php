@@ -13,30 +13,30 @@ if(isset($_POST["accion"]))
     {
         include("botonesmodificar.php");
     }
-    else if($_POST["accion"]=="TablaMateriales")
+    /*else if($_POST["accion"]=="TablaMateriales")
     {
         echo(Materiales::TablaMateriales());
-    }
+    }*/
     else if($_POST["accion"]=="login")
     {
         include("login.php");
     } 
-    else if($_POST["accion"]=="AgregarMaterial")
+    /*else if($_POST["accion"]=="AgregarMaterial")
     {
         Materiales::AgregarMaterial($_POST["nombre"], $_POST["precio"], $_POST["tipo"]);
     }
     else if($_POST["accion"]=="EliminarMaterial")
     {
         Materiales::EliminarMaterial($_POST["id"]);
-    }
+    }*/
     else if($_POST["accion"]=="ModificarMaterial")
     {
         echo(Materiales::TraerUnMaterial($_POST["id"]));
     }
-    else if($_POST["accion"]=="AceptarModificacion")
+    /*else if($_POST["accion"]=="AceptarModificacion")
     {
         echo(Materiales::AceptarModificacion($_POST["nombre"], $_POST["precio"], $_POST["tipo"], $_POST["codigo"]));
-    }
+    }*/
     else if($_POST["accion"]=="ingresar")
     {
         echo(Usuario::BuscarUsuario($_POST['mail'], $_POST['password']));
@@ -51,7 +51,6 @@ if(isset($_POST["accion"]))
         $_SESSION['password']=$_POST['password'];
         $_SESSION['tipo']=$_POST['tipo'];
         setcookie("ultimo", $_POST['mail'], time() + 3600);
-        //var_dump($_SESSION);
     }
     else if($_POST["accion"]=="navbar")
     {

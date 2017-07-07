@@ -1,5 +1,4 @@
 function botonesagrega(){
-    //swal("botones");
     $.ajax({
         url:"nexo.php",
         type:"post",
@@ -13,7 +12,6 @@ function botonesagrega(){
 }
 
 function botonesmodifica(){
-    //swal("botones");
     $.ajax({
         url:"nexo.php",
         type:"post",
@@ -27,7 +25,6 @@ function botonesmodifica(){
 }
 
 function tabla(){
-    //swal("tabla");
     /*$.ajax({
         url:"nexo.php",
         type:"post",
@@ -57,7 +54,6 @@ function tablacomprador(){
 }
 
 function limpiar(){
-    //swal("limpiar");
     $("#botones").html("BOTONES LIM");
     $("#tabla").html("TABLA LIMP");
     $("#tablausuarios").html("TABLAUSUARIOS LIMP");
@@ -83,13 +79,13 @@ function AgregarMaterial()
     if($("#nombre").val()=="")
     {
         $("#error").html("<div class='swal swal-danger'><strong>Agregar Material</strong></div>")
-        swal("agregar material");
+        swal("Agregar Material");
         return "error";
     }
     else if($("#precio").val()=="")
     {
         $("#error").html("<div class='swal swal-danger'><strong>Agregar Precio</strong></div>")
-        swal("agregar precio");
+        swal("Agregar Precio");
         return "error";
     }
     $.ajax({
@@ -140,7 +136,6 @@ function ModificarMaterial(id)
             id:id
         },
         success: function(data){
-            //swal(data),
             $("#nombre").val(data[0].nombre),
             $("#precio").val(data[0].precio),
             $("#tipo").val(data[0].tipo),
@@ -166,21 +161,6 @@ function AceptarModificacion()
             swal(data),
             tabla(),
             botonesagrega()
-        }
-    })
-}
-
-function slim()
-{
-    $.ajax({
-        url:"slim/app.php/hello",
-        type:"get",
-        data:{
-            name:$("#nombre").val(),
-            price: $("#precio").val(),
-        },
-        success: function(data){
-            swal(data)
         }
     })
 }
