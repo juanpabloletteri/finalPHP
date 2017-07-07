@@ -122,6 +122,7 @@ function EliminarMaterial(id)
         },
         success: function(data){
             swal(data);
+            botonesagrega();
             tabla();
         }
     })
@@ -288,7 +289,8 @@ function cerrarsesion()
             accion:"cerrarsesion"
         },
         success:function(data){
-            swal("GRACIAS POR SU VISITA, LO ESPERAMOS PRONTO......");
+            swal("Gracias por su visita. Lo esperamos pronto...");
+            $("#botones").html("Ultimo visitante".concat(data));
         }
     })
 }

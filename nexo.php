@@ -50,6 +50,7 @@ if(isset($_POST["accion"]))
         $_SESSION['mail']=$_POST['mail'];
         $_SESSION['password']=$_POST['password'];
         $_SESSION['tipo']=$_POST['tipo'];
+        setcookie("ultimo", $_POST['mail'], time() + 3600);
         //var_dump($_SESSION);
     }
     else if($_POST["accion"]=="navbar")
@@ -60,5 +61,6 @@ if(isset($_POST["accion"]))
     {
         session_unset();
 		session_destroy();
+        echo($_COOKIE['ultimo']);
     } 
 }
