@@ -13,8 +13,13 @@ $app->get('/hello', function (Request $request, Response $response) {
 
     return $response;
 });
+
 $app->get('/tablamateriales', function (Request $request, Response $response) {  
     $response = Materiales::TablaMateriales();
+    return $response;
+});
+$app->get('/tablacomprador', function (Request $request, Response $response) {  
+    $response = Materiales::TablaComprador();
     return $response;
 });
 

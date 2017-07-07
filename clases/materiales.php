@@ -62,6 +62,53 @@ class Materiales
             return $tabla;
     }
 
+   public static function TablaComprador()
+    {
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("SELECT * from materiales");
+		$consulta->execute();			
+		$array= $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+        $tabla= "
+
+        <script type='text/javascript' class='init'>
+            $(document).ready(function() {
+                $('#example').DataTable();
+            } );
+        </script>
+        
+        <div class='panel panel-success'>
+        <div class='panel-heading'>TABLA DE MATERIALES</div>
+        <div class='panel-body'>
+
+        <table id='example' class='display' cellspacing='0' width='100%'>
+                        <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody>";
+                foreach ($array as $Aux)
+                {
+                    $id=$Aux["codigo"];
+                    $tabla.= " 	<tr>
+                                <td>".$Aux["codigo"]."</td>
+                                <td>".$Aux["nombre"]."</td>
+                                <td>".$Aux["precio"]."</td>
+                                <td>".$Aux["tipo"]."</td>
+                                </tr>";
+                }
+                        "</tbody>
+                    </table>
+                        </div>
+                    </div>";	
+        
+            return $tabla;
+    }
+
     public static function AgregarMaterial($nombre, $precio, $tipo){
         $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
         $consulta =$objetoAccesoDato->RetornarConsulta(

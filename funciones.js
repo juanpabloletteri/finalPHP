@@ -46,6 +46,15 @@ function tabla(){
         }
     })
 }
+function tablacomprador(){
+    $.ajax({
+        url:"slim/app.php/tablacomprador",
+        type:"get",
+        success:function(data){
+            $("#tabla").html(data)
+        }
+    })
+}
 
 function limpiar(){
     //alert("limpiar");
@@ -202,6 +211,7 @@ function ingresarusuario()
             else if(data.tipo=="comprador")
             {
                 tablacomprador();
+                $("#botones").html("");
                 exit();
             }
             alert("Mail o password incorrecto");
