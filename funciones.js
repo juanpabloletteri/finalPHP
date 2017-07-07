@@ -290,7 +290,7 @@ function cerrarsesion()
         },
         success:function(data){
             swal("Gracias por su visita. Lo esperamos pronto...");
-            $("#botones").html("Ultimo visitante".concat(data));
+            $("#botones").html("<h3>Ultimo visitante".concat(data).concat("</h3>"));
         }
     })
 }
