@@ -186,10 +186,22 @@ function ingresarusuario()
             password:$("#password").val()
         },
         success: function(data){
-            if(data)
+            if(data.tipo=="administrador")
             {
                 botonesagrega();
                 tabla();
+                tablausuarios();
+                exit();
+            }
+            else if(data.tipo=="vendedor")
+            {
+                botonesagrega();
+                tabla();
+                exit();
+            }
+            else if(data.tipo=="comprador")
+            {
+                tablacomprador();
                 exit();
             }
             alert("Mail o password incorrecto");
@@ -211,4 +223,20 @@ function tablausuarios()
             $("#tablausuarios").html(data);
         }
     })
+}
+
+function botonadministrador()
+{
+    $("#mail").val("admin@admin.com");
+    $("#password").val("1");
+}
+function botonvendedor()
+{
+    $("#mail").val("vend@vend.com");
+    $("#password").val("1");
+}
+function botoncomprador()
+{
+    $("#mail").val("comp@comp.com");
+    $("#password").val("1");
 }
