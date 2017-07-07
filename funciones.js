@@ -289,7 +289,7 @@ function cerrarsesion()
             accion:"cerrarsesion"
         },
         success:function(data){
-            swal("Gracias por su visita. Lo esperamos pronto...");
+            swal("Gracias por su visita".concat(data).concat(" .Lo esperamos pronto"));
             $("#botones").html("<h3>Ultimo visitante".concat(data).concat("</h3>"));
         }
     })
